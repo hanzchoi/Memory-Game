@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Cards from './Containers/Cards';
+import CardsList from './Containers/CardsList';
 import ScoresHeader from './Containers/ScoresHeader'
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
 
         <ScoresHeader />
 
-        <Cards/>
+        <CardsList/>
       </div>
     );
   }

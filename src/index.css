@@ -19,8 +19,7 @@ body {
 }
 
 body {
-    background: #ffffff url('./img/background.jpg');
-      /* Background pattern from Subtle Patterns */
+    background: #ffffff url('./img/backgrund.jpg');
     /* background-image: url("./img/background.jpg"); */
 
     background-repeat: no-repeat;
