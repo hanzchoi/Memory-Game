@@ -4,6 +4,19 @@ import CardsList from './Containers/CardsList';
 import ScoresHeader from './Containers/ScoresHeader'
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      cards:[]
+    }
+  }
+
+  componentDidUpdate(){
+    this.setState(
+      { cards: ['fa-anchor', 'fa-anchor', 'fa-bicycle',  'fa-bolt', 'fa-cube', 'fa-diamond', 'fa-diamond', 'fa-plane', 'fa-leaf', 'fa-bomb', 'fa-leaf', 'fa-bomb', 'fa-bolt', 'fa-bicycle', 'fa-plane', 'fa-cube']}
+    )
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,7 +26,7 @@ class App extends Component {
 
         <ScoresHeader />
 
-        <CardsList/>
+        <CardsList cards={this.state.cards}/>
       </div>
     );
   }
