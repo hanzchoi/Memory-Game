@@ -7,15 +7,15 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      cards:[]
+      cards:['fa-anchor', 'fa-anchor', 'fa-bicycle',  'fa-bolt', 'fa-cube', 'fa-diamond', 'fa-diamond', 'fa-plane', 'fa-leaf', 'fa-bomb', 'fa-leaf', 'fa-bomb', 'fa-bolt', 'fa-bicycle', 'fa-plane', 'fa-cube']
     }
   }
 
-  componentDidUpdate(){
-    this.setState(
-      { cards: ['fa-anchor', 'fa-anchor', 'fa-bicycle',  'fa-bolt', 'fa-cube', 'fa-diamond', 'fa-diamond', 'fa-plane', 'fa-leaf', 'fa-bomb', 'fa-leaf', 'fa-bomb', 'fa-bolt', 'fa-bicycle', 'fa-plane', 'fa-cube']}
-    )
-  }
+  // componentDidUpdate(){
+  //   this.setState(
+  //     { cards: ['fa-anchor', 'fa-anchor', 'fa-bicycle',  'fa-bolt', 'fa-cube', 'fa-diamond', 'fa-diamond', 'fa-plane', 'fa-leaf', 'fa-bomb', 'fa-leaf', 'fa-bomb', 'fa-bolt', 'fa-bicycle', 'fa-plane', 'fa-cube']}
+  //   )
+  // }
 
   render() {
     return (
