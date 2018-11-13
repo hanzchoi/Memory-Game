@@ -11,11 +11,22 @@ class App extends Component {
     }
   }
 
-  // componentDidUpdate(){
-  //   this.setState(
-  //     { cards: ['fa-anchor', 'fa-anchor', 'fa-bicycle',  'fa-bolt', 'fa-cube', 'fa-diamond', 'fa-diamond', 'fa-plane', 'fa-leaf', 'fa-bomb', 'fa-leaf', 'fa-bomb', 'fa-bolt', 'fa-bicycle', 'fa-plane', 'fa-cube']}
-  //   )
-  // }
+  // Shuffle function from http://stackoverflow.com/a/2450976
+  shuffle = (cards) => {
+    let currentIndex = cards.length, temporaryValue, randomIndex;
+
+    while (currentIndex !== 0){
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = cards[currentIndex];
+      cards[currentIndex] = cards[randomIndex];
+      cards[randomIndex] = temporaryValue;
+    }
+
+    return cards;
+  }
+
+
 
   render() {
     return (
@@ -26,10 +37,17 @@ class App extends Component {
 
         <ScoresHeader />
 
-        <CardsList cards={this.state.cards}/>
+        <CardsList cards={this.shuffle(this.state.cards)}/>
       </div>
     );
   }
 }
 
 export default App;
+
+
+// componentDidUpdate(){
+//   this.setState(
+//     { cards: ['fa-anchor', 'fa-anchor', 'fa-bicycle',  'fa-bolt', 'fa-cube', 'fa-diamond', 'fa-diamond', 'fa-plane', 'fa-leaf', 'fa-bomb', 'fa-leaf', 'fa-bomb', 'fa-bolt', 'fa-bicycle', 'fa-plane', 'fa-cube']}
+//   )
+// }
