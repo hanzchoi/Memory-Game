@@ -8,6 +8,10 @@ const CardsList = ({cards}) => {
   let cardOne = null;
   let cardTwo = null;
 
+  const restartSelection = () => {
+      fClick = null;
+      sClick = null;
+  }
 
   const cardSelected = (card, cardName) => {
     // console.log(card);
@@ -21,8 +25,28 @@ const CardsList = ({cards}) => {
     }else if(fClick !== null && sClick === null){
       sClick = cardName;
       cardTwo = card;
-      console.log(sClick);
-      console.log(cardTwo);
+
+      if(fClick === sClick) {
+        cardOne.classList.add('match');
+        cardOne.classList.add('true');
+
+        cardTwo.classList.add('match');
+        cardTwo.classList.add('true');
+
+      }else {
+        cardOne.classList.add('unMatch');
+        cardTwo.classList.add('unMatch');
+        setTimeout(() => {
+          cardOne.classList.remove('unMatch');
+          cardOne.classList.remove('show');
+          cardOne.classList.remove('open');
+
+          cardTwo.classList.remove('unMatch');
+          cardTwo.classList.remove('show');
+          cardTwo.classList.remove('open');
+        },750)
+      }
+      restartSelection();
     }
     card.classList.add('open')
     card.classList.add('show')

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import './CardsList.css';
+import TimerDisplay from '../Components/TimerDisplay'
 
 class ScoresHeader extends Component {
   state = {
@@ -23,10 +24,10 @@ class ScoresHeader extends Component {
           time: `${mins}:${secs}`
         })
         //time.innerHTML = mins + ":" + secs;
-        //console.log(time,"timer");
+        console.log(this.state.time);
     }, 1000);
   }
-  
+
   render(){
     return(
       <section className="score-panel">
@@ -46,10 +47,7 @@ class ScoresHeader extends Component {
               <li><i className="fa fa-star"></i></li>
           </ul>
 
-          <div className="counter">
-              <span>Time <i className="fa fa-hourglass-half" title="Time"></i>
-              </span><span className="displayTime">{this.state.time}</span>
-          </div>
+          <TimerDisplay time={this.state.time}/>
 
           <button className="btn ratings">Show <br /> ratings</button>
 
