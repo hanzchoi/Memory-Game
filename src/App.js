@@ -8,6 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       cards:['fa-anchor', 'fa-anchor', 'fa-bicycle',  'fa-bolt', 'fa-cube', 'fa-diamond', 'fa-diamond', 'fa-plane', 'fa-leaf', 'fa-bomb', 'fa-leaf', 'fa-bomb', 'fa-bolt', 'fa-bicycle', 'fa-plane', 'fa-cube']
+
     }
   }
 
@@ -25,7 +26,6 @@ class App extends Component {
 
     return cards;
   }
-
 
 
   render() {
