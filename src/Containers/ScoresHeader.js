@@ -3,30 +3,6 @@ import React, { Component } from 'react';
 import TimerDisplay from '../Components/TimerDisplay'
 
 class ScoresHeader extends Component {
-  state = {
-    time: "00:00"
-  }
-
-  timer = () => {
-    let mins = 0;
-    let secs = 0;
-    setInterval(() => {
-        secs = parseInt(secs, 10) + 1;
-        mins = parseInt(mins, 10);
-        if (secs >= 60) {
-            mins += 1;
-            secs = 0;
-        }
-
-        secs = secs < 10 ? "0" + secs : secs;
-        mins = mins < 10 ? "0" + mins : mins;
-        this.setState({
-          time: `${mins}:${secs}`
-        })
-        //time.innerHTML = mins + ":" + secs;
-        console.log(this.state.time);
-    }, 1000);
-  }
 
   render(){
     return(
@@ -47,7 +23,7 @@ class ScoresHeader extends Component {
               <li><i className="fa fa-star"></i></li>
           </ul>
 
-          <TimerDisplay time={this.state.time}/>
+          <TimerDisplay />
 
           <button className="btn ratings">Show <br /> ratings</button>
 
